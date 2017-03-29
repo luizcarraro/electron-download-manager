@@ -27,7 +27,7 @@ function _registerListener(win, opts = {}, cb = () => {}) {
         item.setSavePath(filePath);
 
         // Resuming an interupted download
-        if (item.getState() === 'interrupted') {
+        if (item && item.getState && item.getState() === 'interrupted') {
             item.resume();
         }
 
